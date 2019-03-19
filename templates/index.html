@@ -1,0 +1,53 @@
+<html>
+
+<head>
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<title>:: APP BASICÃO ::</title>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<style>
+		@import url("static/css/main.css");
+	</style>
+	<script src="static/js/menu.js"></script>
+</head>
+
+<body>
+
+	<div class="background">
+		<section id="Header">
+			<nav>
+				<div class="nav-wrapper">
+					<a href="#" data-target="mobile-demo" class="sidenav-trigger">
+						<div class="NavbarToggle">
+							<div class="ToggleOne"></div>
+							<div class="ToggleTwo"></div>
+							<div class="ToggleThree"></div>
+						</div>
+					</a>
+				</div>
+			</nav>
+			<ul class="sidenav" id="mobile-demo">
+				<li><a href="javascript:void(0)" onclick=""><i class="material-icons" >home</i> &nbsp; Início</a></li>
+				<li><a href="javascript:void(0)" onclick="">Item 1</a></li>
+				<li><a href="javascript:void(0)" onclick="">Item 2</a></li>
+				<li><a href="javascript:void(0)" onclick="">Item 3</a></li>
+			</ul>
+		</section>
+
+		<section id="login">
+			<center>
+				<img src="static/logoappbasicao.png" height="200" alt="Logo App Basicão" />
+
+				<div id="fb-root"></div>
+				<div class="fb-login-button" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
+			</center>
+		</section>
+	</div>
+
+</body>
+</html>
