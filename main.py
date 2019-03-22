@@ -3,14 +3,9 @@ import pymongo
 
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-
-
-@app.route('/')
-def main():
-	testeDB()
-	return render_template('index.html')
 	
-
+    
+@app.route('/testeDB', methods=['GET'])
 def testeDB():
 	uri = 'mongodb://heroku_39k79224:usert3st3@ds121406.mlab.com:21406/heroku_39k79224'
 	client = pymongo.MongoClient(uri)
@@ -44,9 +39,14 @@ def testeDB():
 	for doc in cursor:
 		print ('In the %s, %s by %s topped the charts for %d straight weeks.' %
 			(doc['decade'], doc['song'], doc['artist'], doc['weeksAtOne']))
-    
 	#    db.drop_collection('songs')
- 	#   client.close()
+	#   client.close()
+	
+
+@app.route('/')
+def main():
+	#testeDB()
+	return render_template('index.html')
  	
 
 
