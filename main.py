@@ -1,13 +1,19 @@
 from flask import Flask, render_template
-from pymongo import MongoClient
+import pymongo
 
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 
+@app.route('/')
+def main():
+	testeDB()
+	return render_template('index.html')
+	
+
 def testeDB():
 	uri = 'mongodb://heroku_39k79224:usert3st3@ds121406.mlab.com:21406/heroku_39k79224' 
-    client = pymongo.MongoClient(uri)
+ 	client = pymongo.MongoClient(uri)
     db = client.get_default_database()
     
     SEED_DATA = [
@@ -49,10 +55,7 @@ def testeDB():
  	#   client.close()
  	
 
-@app.route('/')
-def main():
-	testeDB()
-	return render_template('index.html')
+
 	
 	
 	
