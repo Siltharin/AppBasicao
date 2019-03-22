@@ -10,6 +10,8 @@ def testeDB():
 	uri = 'mongodb://heroku_39k79224:usert3st3@ds121406.mlab.com:21406/heroku_39k79224'
 	client = MongoClient(uri)
 	db = client['heroku_39k79224']
+	print (myclient.list_database_names())
+	print (db.getCollectionNames())
 	
 	SEED_DATA = [
 		{'decade': '1970s','artist': 'Debby Boone','song': 'You Light Up My Life','weeksAtOne': 10},
@@ -18,7 +20,7 @@ def testeDB():
 	]
 	
 	songs = db['songs']
-	songs.insert_many(SEED_DATA)
+	#songs.insert_many(SEED_DATA)
 	#query = {'song': 'One Sweet Day'}
 	#songs.update(query, {'$set': {'artist': 'Mariah Carey ft. Boyz II Men'}})
 	#cursor = songs.find({'weeksAtOne': {'$gte': 10}}).sort('decade', 1)
