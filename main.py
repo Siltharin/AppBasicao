@@ -10,7 +10,7 @@ def testeDB():
 	uri = 'mongodb://heroku_39k79224:usert3st3@ds121406.mlab.com:21406/heroku_39k79224'
 	client = MongoClient(uri)
 	db = client['heroku_39k79224']
-	print(str(db.names)
+	print(str(db.names))
 	
 	SEED_DATA = [
 		{'decade': '1970s','artist': 'Debby Boone','song': 'You Light Up My Life','weeksAtOne': 10},
