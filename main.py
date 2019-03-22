@@ -8,9 +8,8 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 @app.route('/testeDB', methods=['GET'])
 def testeDB():
 	uri = 'mongodb://heroku_39k79224:usert3st3@ds121406.mlab.com:21406/heroku_39k79224'
-	print (uri)
 	client = MongoClient(uri)
-	print (clientg)
+	print (client)
 	db = client.get_default_database()
 	print (db)
 	
