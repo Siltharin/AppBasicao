@@ -9,7 +9,7 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 def testeDB():
 	uri = 'mongodb://heroku_39k79224:usert3st3@ds121406.mlab.com:21406/heroku_39k79224'
 	print (uri)
-	client = pymongo.MongoClient(uri)
+	client = MongoClient(uri)
 	print (clientg)
 	db = client.get_default_database()
 	print (db)
