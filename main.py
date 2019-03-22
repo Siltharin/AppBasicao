@@ -36,20 +36,14 @@ def testeDB():
 	        'weeksAtOne': 16
 	    }
 	]
-    
-    songs = db['songs']
-    songs.insert_many(SEED_DATA)
-
-
-    query = {'song': 'One Sweet Day'}
-
-    songs.update(query, {'$set': {'artist': 'Mariah Carey ft. Boyz II Men'}})
-
-    cursor = songs.find({'weeksAtOne': {'$gte': 10}}).sort('decade', 1)
-
-    for doc in cursor:
-        print ('In the %s, %s by %s topped the charts for %d straight weeks.' %
-               (doc['decade'], doc['song'], doc['artist'], doc['weeksAtOne']))
+	songs = db['songs']
+	songs.insert_many(SEED_DATA)
+	query = {'song': 'One Sweet Day'}
+	songs.update(query, {'$set': {'artist': 'Mariah Carey ft. Boyz II Men'}})
+	cursor = songs.find({'weeksAtOne': {'$gte': 10}}).sort('decade', 1)
+	for doc in cursor:
+		print ('In the %s, %s by %s topped the charts for %d straight weeks.' %
+			(doc['decade'], doc['song'], doc['artist'], doc['weeksAtOne']))
     
 	#    db.drop_collection('songs')
  	#   client.close()
