@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import pymongo
+from pymongo import MongoClient
 
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
@@ -8,29 +8,19 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 @app.route('/testeDB', methods=['GET'])
 def testeDB():
 	uri = 'mongodb://heroku_39k79224:usert3st3@ds121406.mlab.com:21406/heroku_39k79224'
+	print uri
 	client = pymongo.MongoClient(uri)
+	print clientg
 	db = client.get_default_database()
+	print db
 	
 	SEED_DATA = [
-	    {
-	        'decade': '1970s',
-	        'artist': 'Debby Boone',
-	        'song': 'You Light Up My Life',
-	        'weeksAtOne': 10
-	    },
-	    {
-	        'decade': '1980s',
-	        'artist': 'Olivia Newton-John',
-	        'song': 'Physical',
-	        'weeksAtOne': 10
-	    },
-	    {
-	        'decade': '1990s',
-	        'artist': 'Mariah Carey',
-	        'song': 'One Sweet Day',
-	        'weeksAtOne': 16
-	    }
+		{'decade': '1970s','artist': 'Debby Boone','song': 'You Light Up My Life','weeksAtOne': 10},
+		{'decade': '1980s','artist': 'Olivia Newton-John','song': 'Physical','weeksAtOne': 10},
+		{'decade': '1990s','artist': 'Mariah Carey','song': 'One Sweet Day','weeksAtOne': 16}
 	]
+	print SEED_DATA
+	
 	songs = db['songs']
 	songs.insert_many(SEED_DATA)
 	query = {'song': 'One Sweet Day'}
