@@ -33,13 +33,12 @@
 			</nav>
 			<ul class="sidenav" id="mobile-demo">
 				<li><a href="javascript:void(0)" onclick=""><i class="material-icons" >home</i> &nbsp; Início</a></li>
-				<li><a href="javascript:void(0)" onclick="">Item 1</a></li>
-				<li><a href="javascript:void(0)" onclick="">Item 2</a></li>
-				<li><a href="javascript:void(0)" onclick="">Item 3</a></li>
+				<li><a href="javascript:void(0)" onclick="">Seu Feedback</a></li>
+				<li><a href="javascript:void(0)" onclick="">Onde c tá?</a></li>>
 			</ul>
 		</section>
 
-		<section id="login">
+		<section id="loginPage">
 			<center>
 				<br/><br/><br/>
 				<img src="static/logoappbasicao.png" height="200" alt="Logo App Basicao" />
@@ -47,6 +46,25 @@
 				<div id="fb-root"></div>
 				<div class="fb-login-button" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
 			</center>
+		</section>
+
+		<section id="feedbackPage" style="display:none;">
+			<div class="row">
+				<div class="input-field col s12">
+					<textarea id="feedbackmessage" type="tel" class="validate phone_with_ddd" placeholder="(99) 99999 9999" />
+					<label for="feedbackmessage"><i class="fab fa-whatsapp"></i> &nbsp;Envie-nos seu feedback, dúvidas ou sugestões:</label>
+				</div>
+			</div>
+			<div class="row">	
+				<div class="input-field col s12">
+					<input id="contact" type="text" class="validate" placeholder="Seu contato">
+					<label for="contact">Informação de contato: &nbsp;&nbsp;</label>
+				</div>
+			</div>
+			<br/>
+			<div class="row">
+				<button class="btn waves-effect waves-white" type="button" name="action" onclick="updateUser();">Salvar</button><br/>
+			</div>
 		</section>
 	</div>
 
