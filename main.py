@@ -12,11 +12,11 @@ def main():
 	
 
 def testeDB():
-	uri = 'mongodb://heroku_39k79224:usert3st3@ds121406.mlab.com:21406/heroku_39k79224' 
- 	client = pymongo.MongoClient(uri)
-    db = client.get_default_database()
-    
-    SEED_DATA = [
+	uri = 'mongodb://heroku_39k79224:usert3st3@ds121406.mlab.com:21406/heroku_39k79224'
+	client = pymongo.MongoClient(uri)
+	db = client.get_default_database()
+	
+	SEED_DATA = [
 	    {
 	        'decade': '1970s',
 	        'artist': 'Debby Boone',
