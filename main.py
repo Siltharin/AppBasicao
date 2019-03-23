@@ -14,7 +14,7 @@ def testeDB():
 	dir(name)
 	collection = db.collection_names(include_system_collections=False)
 	for collect in collection:
-    	print collect
+		print collect
 	print(db.names.find_one())
 	#help(name)  
 	#print (str(name))
