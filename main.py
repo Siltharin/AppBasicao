@@ -10,7 +10,6 @@ def testeDB():
 	uri = 'mongodb://heroku_39k79224:usert3st3@ds121406.mlab.com:21406/heroku_39k79224'
 	client = MongoClient(uri)
 	db = client['heroku_39k79224']
-	db.auth("heroku_39k79224", "usert3st3" )
 	name = db.names
 	dir(name)
 	help(name)  
