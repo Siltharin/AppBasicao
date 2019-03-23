@@ -12,7 +12,8 @@ def testeDB():
 	db = client['heroku_39k79224']
 	name = db.names
 	dir(name)
-	help(name)  
+	#help(name)  
+	print (str(name))
 	
 	SEED_DATA = [
 		{'decade': '1970s','artist': 'Debby Boone','song': 'You Light Up My Life','weeksAtOne': 10},
