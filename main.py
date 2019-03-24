@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import pymongo
 
 
 app = Flask(__name__)
@@ -15,3 +16,6 @@ def testeDB():
 	uri = "mongodb+srv://appbasicuser:<password>@cluster0-jvnpg.mongodb.net/test?retryWrites=true"
 	client = pymongo.MongoClient(uri)
 	db = client.test
+	print(str(db))
+	name = db.names
+	dir(name)
