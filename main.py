@@ -13,9 +13,10 @@ def main():
 
 @app.route('/testeDB', methods=['GET'])
 def testeDB():	
-	uri = "mongodb+srv://appbasicuser:<password>@cluster0-jvnpg.mongodb.net/test?retryWrites=true"
+	uri = "mongodb+srv://appbasicuser:appbasicusert3st3@cluster0-jvnpg.mongodb.net/test?retryWrites=true"
 	client = pymongo.MongoClient(uri)
 	db = client.test
 	print(str(db))
 	name = db.names
 	dir(name)
+	return (str(db))
