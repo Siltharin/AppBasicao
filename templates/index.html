@@ -54,19 +54,21 @@
 
 		<section id="formPage" style="display:none;">
 			<center><h1>Cadastro</h1></center>
-			<div>
+			<div style="margin:10;">
 				<label for="feedbackmessageTextArea">Envie-nos seu feedback, dúvidas ou sugestões:</label>
 				<textarea id="feedbackmessageTextArea" ></textarea>
 			</div>
-			<br/><br/>
-			<div>
+			<br/>
+			<div style="margin:10;">
 				<label for="contactField">Informação de contato:</label>
 				<input id="contactField" type="text">
 			</div>
 			<br/>
 			<div>
-				<button type="button" name="action" onclick="saveForm();">Salvar</button><br/>
+				<center><button type="button" name="action" onclick="saveForm();">Salvar</button></center>
 			</div>
+			<br/>
+			<div id="formResponse"></div>
 		</section>
 
 		<section id="mapPage" style="display:none;">
