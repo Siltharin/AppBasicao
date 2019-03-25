@@ -15,4 +15,4 @@ function showFormPage() {
 function showMapPage() {
   hideAllPages();
   $("#mapPage").show();
-}
+}   

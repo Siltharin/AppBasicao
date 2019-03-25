@@ -15,6 +15,6 @@
   $('.NavbarLinkItem, .NavbarMask').on('click', function() {
     $('.NavbarToggle, .NavbarLinkList, .NavbarMask, .ToggleOne, .ToggleTwo, .ToggleThree').removeClass('On');
   });
-
+   
 
  
