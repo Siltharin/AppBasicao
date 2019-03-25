@@ -10,6 +10,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+	<script src="static/js/facebook.js"></script>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2&appId=158550007562379&autoLogAppEvents=1"></script>
+
 	<style>
 		@import url("static/css/main.css");
 	</style>
@@ -46,18 +49,29 @@
 				<div class="fb-login-button" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
 			</center>
 		</section>
-		
+
 		<section id="formPage" style="display:none;">
-			
+			<div>
+				<textarea id="feedbackmessage" type="tel" class="validate phone_with_ddd" placeholder="(99) 99999 9999" />
+				<label for="feedbackmessage"><i class="fab fa-whatsapp"></i> &nbsp;Envie-nos seu feedback, dúvidas ou sugestões:</label>
+			</div>
+			<div>
+				<input id="contact" type="text" class="validate" placeholder="Seu contato">
+				<label for="contact">Informação de contato: &nbsp;&nbsp;</label>
+			</div>
+			<br/>
+			<div>
+				<button class="" type="button" name="action" onclick="updateUser();">Salvar</button><br/>
+			</div>
 		</section>
-		
+
 		<section id="mapPage" style="display:none;">
-			
+
 		</section>
 	</div>
 
 </body>
 
-	<script src="static/js/menu.js"></script>
-	<script src="static/js/main.js"></script>
+<script src="static/js/menu.js"></script>
+<script src="static/js/main.js"></script>
 </html>
