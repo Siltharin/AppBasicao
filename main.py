@@ -15,16 +15,12 @@ def saveForm():
 	contact = request.args.get("contact")
 	message = request.args.get("message")
 	token = request.args.get("token")
-	print(message)
 
 	uri = "mongodb+srv://appbasicuser:appbasicusert3st3@cluster0-jvnpg.mongodb.net/test?retryWrites=true"
 	client = pymongo.MongoClient(uri)
-	db = client.test
-	print(str(db.names))
-	
+	db = client.test	
 	messages = db.messages
 	messages.insert_one({ "contact": contact, "message": message})
-	print(str(messages))
 	
 	cursor = messages.find() 
 	for item in cursor:
