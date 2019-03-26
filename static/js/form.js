@@ -1,7 +1,6 @@
 var fbtoken = "";
 
 function saveForm() {
-	
 	var message = document.getElementById("feedbackmessageTextArea").value;
 	var contact = document.getElementById("contactField").value;
 
@@ -10,6 +9,14 @@ function saveForm() {
 				+ "&fbtoken=" + fbtoken;
 	
 	$.post(url, {}, function(response) {
-		document.getElementById("formResponse").innerHTML = "<center><font color='darkblue'><b>Obrigada pelo Feedback!</b></font></center>";
+		listForm();
+	});
+}
+
+function listForm() {
+	var url = "/listForm?fbtoken=" + fbtoken;
+	
+	$.post(url, {}, function(response) {
+		document.getElementById("listFormDiv").innerHTML = response;
 	});
 }
