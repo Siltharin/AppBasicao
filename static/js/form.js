@@ -21,7 +21,10 @@ function listForm() {
 		var items = jQuery.parseJSON(response);
 		for(var k in items) {
 			var item = items[k];
-			var date = new Date(item.timestamp.$date);
+			var date = "";
+			if (item.timestamp != undefined && (item.timestamp != "")) {
+				var date = new Date(item.timestamp.$date);
+			}
 		   	list += "<hr>" + date + " - " + 
 		   			item.contact + " - " + 
 		   			item.message;
