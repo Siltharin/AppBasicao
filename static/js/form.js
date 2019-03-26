@@ -21,11 +21,11 @@ function listForm() {
 		var items = jQuery.parseJSON(response);
 		for(var k in items) {
 			var item = items[k];
-			var date = new Date((item.timestamp) * 1000).toISOString(); //.toString()
-		   	list += date + " - " + 
+			var date = new Date(item.timestamp.$date);
+		   	list += "<hr>" + date + " - " + 
 		   			item.contact + " - " + 
 		   			item.message;
 		}
-		document.getElementById("listFormDiv").innerHTML = list;
+		document.getElementById("listFormDiv").innerHTML = list + "<hr>";
 	});
 }
