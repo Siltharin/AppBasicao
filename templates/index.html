@@ -2,6 +2,8 @@
 
 <head>
 	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 	<title>:: APP BASICÃO ::</title>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -22,7 +24,6 @@
 </head>
 
 <body>
-
 	<div class="background">
 		<section id="header">
 			<nav>
@@ -38,8 +39,8 @@
 			</nav>
 			<ul class="sidenav" id="mobile-demo">
 				<li><a href="javascript:void(0)" onclick="showLoginPage()"><i class="material-icons" >home</i> &nbsp; Início</a></li>
+				<li><a href="javascript:void(0)" onclick="showMapPage()"><i class="material-icons" >map</i> &nbsp; Mapa</a></li>
 				<li><a href="javascript:void(0)" onclick="showFormPage()"><i class="material-icons" >assignment</i> &nbsp; Cadastro</a></li>
-				<li><a href="javascript:void(0)" onclick="showMapPage()"><i class="material-icons" >map</i> &nbsp; Mapa</a></li>>
 			</ul>
 		</section>
 
@@ -52,15 +53,21 @@
 				<div class="fb-login-button" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
 			</center>
 		</section>
+		
+		<section id="mapPage" style="display:none;">
+			<center>
+				<h1>Mapa</h1></center>
+		</section>
 
 		<section id="formPage" style="display:none;">
-			<center><h1>Cadastro</h1></center>
-			<div style="margin:20;">
+			<center>
+				<h1>Cadastro</h1></center>
+			<div style="margin:20px;">
 				<label for="feedbackmessageTextArea">Envie-nos seu feedback, dúvidas ou sugestões:</label>
-				<textarea id="feedbackmessageTextArea" ></textarea>
+				<textarea id="feedbackmessageTextArea"></textarea>
 			</div>
 			<br/>
-			<div style="margin:20;">
+			<div style="margin:20px;">
 				<label for="contactField">Informação de contato:</label>
 				<input id="contactField" type="text">
 			</div>
@@ -70,12 +77,9 @@
 			</div>
 			<br/>
 			<div id="formResponse"></div>
+			<div id="listFeedback"></div>
 		</section>
 
-		<section id="mapPage" style="display:none;">
-			<center><h1>Mapa</h1></center>
-		</section>
 	</div>
-
 </body>
 </html>
