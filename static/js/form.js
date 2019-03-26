@@ -25,8 +25,8 @@ function listForm() {
 			if (item.timestamp != undefined && (item.timestamp != "")) {
 				var date = new Date(item.timestamp.$date);
 			}
-		   	list += "<hr>" + date + " - " + 
-		   			item.contact + " - " + 
+		   	list += "<hr>" + item.contact + "<br/>" + 
+		   			date + "<br/>" + 
 		   			item.message;
 		}
 		document.getElementById("listFormDiv").innerHTML = list + "<hr>";
