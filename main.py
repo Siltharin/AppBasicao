@@ -1,5 +1,6 @@
 from flask import Flask, Response, request, render_template
-import pymongo, json
+import pymongo, json, datetime
+from bson.json_util import dumps
 
 
 app = Flask(__name__)
@@ -22,8 +23,9 @@ def saveForm():
 	client = pymongo.MongoClient(dburi)
 	db = client.test	
 	messages = db.messages
-	messages.insert_one({ "contact": contact, "message": message})
-
+	messages.insert_one({"contact": contact, 
+						"message": message,
+						"timestamp": datetime.datetime.utcnow()})
 	return str(message)
 
 
@@ -33,6 +35,6 @@ def listForm():
 	client = pymongo.MongoClient(dburi)
 	db = client.test	
 	messages = db.messages	
-	cursor = messages.find() 
-	return json.dumps(cursor)
+	cursor = messages.find().sort("timestamp", -1) 
+	return dumps(cursor)
 	
