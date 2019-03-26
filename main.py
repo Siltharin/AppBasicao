@@ -1,5 +1,6 @@
 from flask import Flask, Response, request, render_template
-import pymongo, json, datetime
+import pymongo
+import json, datetime
 from bson.json_util import dumps
 
 

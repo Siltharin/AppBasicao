@@ -17,6 +17,12 @@ function listForm() {
 	var url = "/listForm?fbtoken=" + fbtoken;
 	
 	$.post(url, {}, function(response) {
-		document.getElementById("listFormDiv").innerHTML = response;
+		var list = "";
+		//var items = JSON.parse(response);
+		var items = jQuery.parseJSON(response);
+		for(var item in items) {
+		   list += item[0] + " - " + item[1] + " " + item[2];
+		}
+		document.getElementById("listFormDiv").innerHTML = list;
 	});
 }
