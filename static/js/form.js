@@ -18,10 +18,13 @@ function listForm() {
 	
 	$.post(url, {}, function(response) {
 		var list = "";
-		//var items = JSON.parse(response);
 		var items = jQuery.parseJSON(response);
-		for(var item in items) {
-		   list += item[0] + " - " + item[1] + " " + item[2];
+		for(var k in items) {
+			var item = items[k];
+			var date = new Date((item.timestamp) * 1000).toISOString(); //.toString()
+		   	list += date + " - " + 
+		   			item.contact + " - " + 
+		   			item.message;
 		}
 		document.getElementById("listFormDiv").innerHTML = list;
 	});
