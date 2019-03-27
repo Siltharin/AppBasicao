@@ -14,28 +14,27 @@ def main():
 	
 
 dburi = "mongodb+srv://appbasicuser:appbasicusert3st3@cluster0-jvnpg.mongodb.net/test?retryWrites=true"
+dbcollectionname = "messages"
 	
 @app.route('/saveForm', methods=['POST'])
 def saveForm():
-	contact = request.args.get("contact")
-	message = request.args.get("message")
 	token = request.args.get("token")
+	item = {"contact": request.args.get("contact"), 
+			"message": request.args.get("message"),
+			"timestamp": datetime.datetime.utcnow()}
 
 	client = pymongo.MongoClient(dburi)
 	db = client.test	
-	messages = db.messages
-	messages.insert_one({"contact": contact, 
-						"message": message,
-						"timestamp": datetime.datetime.utcnow()})
-	return str(message)
+	dbcollection = db[dbcollectionname]
+	itemid = dbcollection.insert_one(item).inserted_id
+	return str(itemid)
 
 
 @app.route('/listForm', methods=['POST'])
 def listForm():	
-
 	client = pymongo.MongoClient(dburi)
 	db = client.test	
-	messages = db.messages	
-	cursor = messages.find().sort("timestamp", -1) 
+	dbcollection = db[dbcollectionname]	
+	cursor = dbcollection.find().sort("timestamp", -1) 
 	return dumps(cursor)
 	
