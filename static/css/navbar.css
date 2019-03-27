@@ -43,7 +43,12 @@ nav {
   -ms-transform: rotate(-47deg) translate(6px, -10px);
   -webkit-transform: rotate(-47deg) translate(6px, -10px);
   transform: rotate(-47deg) translate(6px, -10px);
+}
 
+@media only screen and (min-width: 993px) {
+	nav a.sidenav-trigger {
+    	display: block !important;
+	}
 }
 
 
