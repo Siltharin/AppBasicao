@@ -1,5 +1,6 @@
 from flask import Flask, Response, request, render_template
 from formCadastro import *
+import datetime
 
 
 app = Flask(__name__)
@@ -10,9 +11,14 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 def main():
 	return render_template('index.html')
 
+
 @app.route('/saveForm', methods=['POST'])
 def saveForm():
-	return saveCadastro()
+	token = request.args.get("token")
+	item = {"contact": request.args.get("contact"), 
+			"message": request.args.get("message"),
+			"timestamp": datetime.datetime.utcnow()}
+	return saveCadastro(item)
 
 @app.route('/listForm', methods=['POST'])
 def listForm():	
