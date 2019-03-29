@@ -17,6 +17,6 @@ def listCadastro():
 	client = pymongo.MongoClient(dburi)
 	db = client.test	
 	dbcollection = db[dbcollectionname]	
-	cursor = dbcollection.find().sort("timestamp", -1) 
+	cursor = dbcollection.find().sort("timestamp", -1).limit(10) 
 	return dumps(cursor)
 	
