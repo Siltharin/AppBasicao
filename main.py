@@ -1,9 +1,13 @@
-from flask import Flask, Response, request, render_template
+from flask import Flask, Response, request, redirect
 
 
 app = Flask(__name__)
-app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 @app.route('/')
 def main():
-	return render_template('index.html')
+	return redirect('static/index.html')
+
+
+if __name__ == "__main__":
+	app.run()
+
