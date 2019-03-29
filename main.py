@@ -1,4 +1,4 @@
-from flask import Flask, Response, request, render_template
+from flask import Flask, Response, request, redirect
 from formCadastro import *
 import datetime
 
@@ -9,7 +9,7 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 @app.route('/')
 def main():
-	return render_template('index.html')
+	return redirect('static/index.html')
 
 
 @app.route('/saveForm', methods=['POST'])
