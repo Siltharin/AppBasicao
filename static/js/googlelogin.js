@@ -3,7 +3,8 @@ var googletoken = null;
 
 function onSuccess(googleUser) {
     console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    token = googleUser.getAuthResponse().id_token;
+    googletoken = googleUser.getAuthResponse().id_token;
+    fbtoken = "";
 }
 
 function onFailure(error) {
