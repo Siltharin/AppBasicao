@@ -4,13 +4,15 @@ import datetime
 
 
 app = Flask(__name__)
-app.config['TEMPLATES_AUTO_RELOAD'] = True
-	
 
 @app.route('/')
 def main():
 	return redirect('static/index.html')
 
+
+@app.route('/listForm', methods=['POST'])
+def listForm():	
+	return listCadastro()
 
 @app.route('/saveForm', methods=['POST'])
 def saveForm():
@@ -20,11 +22,7 @@ def saveForm():
 			"timestamp": datetime.datetime.utcnow()}
 	return saveCadastro(item)
 
-@app.route('/listForm', methods=['POST'])
-def listForm():	
-	return listCadastro()
-
 
 if __name__ == "__main__":
-	app.run()
+	app.run(debug=True)
 	

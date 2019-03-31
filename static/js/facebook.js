@@ -1,3 +1,5 @@
+var fbtoken = "";
+
 window.fbAsyncInit = function() {
 	FB.init({
 		appId: '158550007562379',
@@ -6,6 +8,14 @@ window.fbAsyncInit = function() {
 		version: 'v3.2'
 	});
 	FB.AppEvents.logPageView();
+
+	FB.getLoginStatus(function(response) {
+		statusChangeCallback(response);
+	});
+
+	FB.logout(function(response) {
+		// Person is now logged out
+	});
 };
 
 (function(d, s, id) {
@@ -19,3 +29,29 @@ window.fbAsyncInit = function() {
 	fjs.parentNode.insertBefore(js, fjs);
 })
 (document, 'script', 'facebook-jssdk');
+
+
+function checkLoginState() {
+	FB.getLoginStatus(function(response) {
+	  statusChangeCallback(response);
+	});
+}
+
+function statusChangeCallback(response) {
+//FB.login(function(response) {
+	if (response.status === 'connected') {
+		// Logged into your app and Facebook.
+	  } else {
+		// The person is not logged into this app or we are unable to tell. 
+	  }
+ // }, {scope: 'public_profile,email'});
+}
+
+function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+    //  document.getElementById('status').innerHTML =
+      //  'Thanks for logging in, ' + response.name + '!';
+    });
+  }

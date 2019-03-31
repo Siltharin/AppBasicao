@@ -1,4 +1,3 @@
-var fbtoken = "";
 
 function saveForm() {
 	var message = document.getElementById("feedbackmessageTextArea").value;
