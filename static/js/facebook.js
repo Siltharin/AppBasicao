@@ -37,8 +37,8 @@ function checkLoginState() {
 }
 
 function statusChangeCallback(response) {
-	console.log(response);
-	fbtoken = reponse.accessToken;
+	fbtoken = response.authResponse.accessToken;
+	fbuserid = response.authResponse.userID;
 	googletoken = "";
 	if (response.status === 'connected') {
 		testAPI();

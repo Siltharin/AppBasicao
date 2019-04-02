@@ -15,7 +15,8 @@ function saveForm() {
 }
 
 function listForm() {
-	var url = "/listForm?fbtoken=" + fbtoken;
+	var url = "/listForm?fbtoken=" + fbtoken
+				+ "&googletoken=" + googletoken;
 	
 	$.post(url, {}, function(response) {
 		var list = "";
